@@ -4,7 +4,7 @@ CREATE TABLE Alunos (
     Nome VARCHAR(100) NOT NULL,
     CPF VARCHAR(11) UNIQUE NOT NULL,
     Data_Nascimento DATE NOT NULL,
-    Endereço VARCHAR(255) NOT NULL,
+    Endereco VARCHAR(255) NOT NULL,  -- Removed accent for consistency
     Telefone VARCHAR(15)
 );
 
@@ -19,7 +19,7 @@ CREATE TABLE Instrutores (
 CREATE TABLE Modalidades (
     ID_Modalidade INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,
-    Descrição TEXT
+    Descricao TEXT  -- Removed accent for consistency
 );
 
 -- Criação da tabela Planos de Treinamento
@@ -27,9 +27,9 @@ CREATE TABLE Planos_Treinamento (
     ID_Plano INT AUTO_INCREMENT PRIMARY KEY,
     ID_Aluno INT NOT NULL,
     ID_Instrutor INT NOT NULL,
-    Descrição TEXT,
-    Data_Criação DATE NOT NULL,
-    Data_Atualização DATE,
+    Descricao TEXT,  -- Removed accent for consistency
+    Data_Criacao DATE NOT NULL,  -- Removed accent for consistency
+    Data_Atualizacao DATE,
     FOREIGN KEY (ID_Aluno) REFERENCES Alunos(ID_Aluno) ON DELETE CASCADE,
     FOREIGN KEY (ID_Instrutor) REFERENCES Instrutores(ID_Instrutor) ON DELETE CASCADE
 );
@@ -39,7 +39,7 @@ CREATE TABLE Aulas (
     ID_Aula INT AUTO_INCREMENT PRIMARY KEY,
     ID_Modalidade INT NOT NULL,
     ID_Instrutor INT NOT NULL,
-    Horário TIME NOT NULL,
+    Horario TIME NOT NULL,  -- Removed accent for consistency
     Capacidade INT NOT NULL,
     Data DATE NOT NULL,
     FOREIGN KEY (ID_Modalidade) REFERENCES Modalidades(ID_Modalidade) ON DELETE CASCADE,
